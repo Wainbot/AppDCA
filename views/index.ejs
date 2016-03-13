@@ -1,0 +1,294 @@
+<% include blocs/head.ejs %>
+
+<section class="home" id="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="home-wrapper text-center">
+                    <img src="/images/logo.png" class="animated fadeInDown wow" alt="dca team" width="250" data-wow-delay=".1s">
+                    <h2 class="animated fadeInDown wow" data-wow-delay=".1s">
+                        Promouvoir les <span class="text-colored">jeux vidéos</span>
+                    </h2>
+                    <p class="animated fadeInDown wow text-muted" data-wow-delay=".2s">
+                        L'association souhaite promouvoir ses passions en France à travers la réalisation de Let's Play, lives et création de line up de compétition sur divers jeux d'équipe, sans oublier les critiques et découvertes de jeux, qui pourraient s'étendre aux mangas, anime et séries japonaises.
+                    </p>
+                    <!--<a href="/#features" class="btn btn-primary w-lg animated fadeInDown wow" data-wow-delay=".3s">Commencer</a>-->
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="title-box">
+                    <p class="title-alt">Actualités</p>
+                    <h3 class="fadeIn animated wow text-white" data-wow-delay=".1s">Tenez-vous au courant</h3>
+                    <div class="border"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <% if (typeof error != 'undefined') { %>
+            <div class="alert alert-danger fadeIn animated wow" data-wow-delay=".3s">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <%= error %>
+            </div>
+            <% } else if (typeof news != 'undefined' && news.length > 0) { %>
+                <% news.forEach(function(value, index) { %>
+                <div class="col-sm-4">
+                    <div class="service-item animated fadeInLeft wow" data-wow-delay=".<%= index+1 %>s">
+                        <% if (typeof value.img != 'undefined') { %>
+                            <img src="images/icons/cup.svg" width="48" alt="img">
+                        <% } %>
+                        <div class="service-detail">
+                            <h4 class="text-light"><%= value.title %></h4>
+                            <p><%= value.content %></p>
+                        </div>
+                        <br>
+                        <a href="/news/<%= value.uid %>" class="btn btn-primary">Lire plus <i class="glyphicon glyphicon-chevron-right"></i></a>
+                    </div>
+                </div>
+                <% }); %>
+            <% } else { %>
+                <div class="col-sm-12 text-center">
+                    Il n'y a pas d'actualité pour le moment
+                </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-gray" id="stream">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="title-box">
+                    <p class="title-alt">Stream</p>
+                    <h3 class="fadeIn animated wow" data-wow-delay=".1s">Regardez-nous en live</h3>
+                    <div class="border"></div>
+                </div>
+            </div>
+            <div class="col-sm-12 text-center hidden-xs">
+                <img src="/images/macbook.png" alt="stream" id="macbook-stream">
+                <iframe src="http://player.twitch.tv/?channel=dca_team" id="iframe-stream" frameborder="0" allowfullscreen></iframe>
+                <br>
+                <a target="_blank" href="http://www.twitch.tv/dca_team?tt_medium=live_embed&tt_content=text_link">
+                    Regardez-nous en live sur www.twitch.tv
+                </a>
+            </div>
+            <div class="col-sm-12 text-center hidden-sm hidden-md hidden-lg">
+                Streaming non disponible sur mobile
+                <br>
+                <a target="_blank" href="http://www.twitch.tv/dca_team?tt_medium=live_embed&tt_content=text_link">
+                    Regardez-nous en live sur www.twitch.tv
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="pricing">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="title-box">
+                    <p class="title-alt fadeIn animated wow" data-wow-delay=".1s">Devenir membre</p>
+                    <h3 class="fadeIn animated wow text-white" data-wow-delay=".2s">Faites votre choix</h3>
+                    <div class="border"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <article class="pricing-column pricing-dark col-lg-3 col-sm-6">
+                <div class="inner-box fadeIn animated wow" data-wow-delay=".1s">
+                    <div class="plan-header text-center">
+                        <h3 class="plan-title">Adhérer</h3>
+                    </div>
+                    <ul class="plan-stats list-unstyled text-center">
+                        <li>
+                            Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet
+                            oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis
+                            suavitate disputando nam. Mutat convenirete.
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary w-md">Choisir</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="pricing-column pricing-dark col-lg-3 col-sm-6">
+                <div class="inner-box fadeIn animated wow" data-wow-delay=".2s">
+                    <div class="plan-header text-center">
+                        <h3 class="plan-title">Contribuer</h3>
+                    </div>
+                    <ul class="plan-stats list-unstyled text-center">
+                        <li>
+                            Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet
+                            oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis
+                            suavitate disputando nam. Mutat convenirete.
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary w-md">Choisir</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="pricing-column pricing-dark col-lg-3 col-sm-6">
+                <div class="inner-box fadeIn animated wow" data-wow-delay=".3s">
+                    <div class="plan-header text-center">
+                        <h3 class="plan-title">S'affilier</h3>
+                    </div>
+                    <ul class="plan-stats list-unstyled text-center">
+                        <li>
+                            Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet
+                            oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis
+                            suavitate disputando nam. Mutat convenirete.
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary w-md">Choisir</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="pricing-column pricing-dark col-lg-3 col-sm-6">
+                <div class="inner-box fadeIn animated wow" data-wow-delay=".4s">
+                    <div class="plan-header text-center">
+                        <h3 class="plan-title">S'abonner</h3>
+                    </div>
+                    <ul class="plan-stats list-unstyled text-center">
+                        <li>
+                            Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet
+                            oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis
+                            suavitate disputando nam. Mutat convenirete.
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary w-md">Choisir</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!--</section>-->
+
+<section class="section bg-gray" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="title-box">
+                    <p class="title-alt">Fondateurs</p>
+                    <h3 class="fadeIn animated wow" data-wow-delay=".1s">Vous êtes ici grâce à eux</h3>
+                    <div class="border"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row team text-center">
+                    <div class="col-sm-6">
+                        <div class="team-member animated fadeInDown wow" data-wow-delay=".1s">
+                            <img src="/images/fondateurs/yuu.jpg" alt="team-member" class="img-responsive img-circle" width="100%">
+                            <h4>Yuu</h4>
+                            <p class="text-muted">
+                                <a href="https://www.youtube.com/watch?v=zfqj0HiBw84&list=PL-0nh2x_KF-O1T81MjfPCUilalsFXw296">Séries commentées par Yuu</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="team-member animated fadeInDown wow" data-wow-delay=".3s">
+                            <img src="/images/fondateurs/avel.png" alt="team-member" class="img-responsive img-circle" width="100%">
+                            <h4>Avel</h4>
+                            <p class="text-muted">
+                                <a href="https://www.youtube.com/watch?v=Q4x1Umoi3QQ&list=PL-0nh2x_KF-PNiMuXiog9NIiWswfdkq14">Séries commentées par Avel</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="faq">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="title-box">
+                    <p class="title-alt">Faq</p>
+                    <h3 class="fadeIn animated wow text-white" data-wow-delay=".1s">Une question ? Des réponses.</h3>
+                    <div class="border"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-t-30">
+            <div class="col-md-5 col-md-offset-1">
+                <div class="animated fadeInRight wow" data-wow-delay=".2s">
+                    <div class="question-q-box">Q.</div>
+                    <h4 class="question text-white">Qu'est-ce que la DCA Team ?</h4>
+                    <p class="answer">
+                        La DCA Team est une association souhaitant promouvoir les jeux vidéos, l'e-sport et la culture vidéo ludique japonaise en France.
+                    </p>
+                </div>
+                <div class="animated fadeInLeft wow" data-wow-delay=".5s">
+                    <div class="question-q-box">Q.</div>
+                    <h4 class="question text-white">Comment faire parti de notre projet ?</h4>
+                    <p class="answer">
+                        En vous rendant à la rubrique "Devenir membre" et en choisissant votre type d'adhésion.
+                    </p>
+                </div>
+                <div class="animated fadeInLeft wow" data-wow-delay=".1s">
+                    <div class="question-q-box">Q.</div>
+                    <h4 class="question text-white" data-wow-delay=".1s">Nos projets ?</h4>
+                    <ul class="answer list-unstyled">
+                        <li>Vidéos de Let's Play</li>
+                        <li>Programme de stream</li>
+                        <li>Line up de compétition</li>
+                        <li>Critiques et découvertes</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="animated fadeInRight wow" data-wow-delay=".4s">
+                    <div class="question-q-box">Q.</div>
+                    <h4 class="question text-white">Qui sont Yuu et Avel ?</h4>
+                    <p class="answer">
+                        Yuu et Avel sont .......
+                        <br>
+                        Qui .......
+                    </p>
+                </div>
+                <div class="animated fadeInLeft wow" data-wow-delay=".3s">
+                    <div class="question-q-box">Q.</div>
+                    <h4 class="question text-white">Notre mission ?</h4>
+                    <p class="answer">
+                        Promouvoir les jeux vidéos, l'e-sport et la culture vidéo ludique japonaise en France.
+                    </p>
+                </div>
+                <div class="animated fadeInRight wow" data-wow-delay=".6s">
+                    <div class="question-q-box">Q.</div>
+                    <h4 class="question text-white">Licence &amp; Copyright</h4>
+                    <p class="answer">
+                        Nous sommes une association à but non lucratif.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include blocs/foot.ejs %>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Coderthemes">
+
+    <title>DCA Team - Let's play</title>
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700'>
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
+    <link rel='stylesheet' type='text/css' href="/stylesheets/bootstrap.min.css">
+    <link rel='stylesheet' type='text/css' href="/stylesheets/animate.css">
+    <link rel='stylesheet' type='text/css' href="/stylesheets/material-design-iconic-font.min.css">
+    <link rel='stylesheet' type='text/css' href="/stylesheets/style.css">
+    <link rel='stylesheet' type='text/css' href="/stylesheets/colors/default.css" id="color-opt">
+    <link rel='stylesheet' type='text/css' href="/stylesheets/main.css" id="color-opt">
+
+    <!--[if lt IE 9]>
+    <script src="/javascripts/html5shiv.js"></script>
+    <script src="/javascripts/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-74366260-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body data-spy="scroll" data-target="#navbar-menu" class="layout-dark">
+
+<div class="navbar navbar-custom sticky" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <i class="zmdi zmdi-menu"></i>
+            </button>
+            <a class="navbar-brand logo" href="/">
+                <img src="/images/logo.png" alt="dca team" width="50">
+            </a>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-menu">
+            <ul class="nav navbar-nav nav-custom-left">
+                <li class="active">
+                    <a href="/#home">Intro</a>
+                </li>
+                <li>
+                    <a href="/#features">Actualités</a>
+                </li>
+                <li>
+                    <a href="/#stream">Stream</a>
+                </li>
+                <li>
+                    <a href="/#pricing">Devenir membre</a>
+                </li>
+                <li>
+                    <a href="/#team">Fondateurs</a>
+                </li>
+                <li>
+                    <a href="/#faq">FAQ</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <% if (typeof user == 'undefined') { %>
+                    <li>
+                        <a class="btn btn-inverse btn-bordered navbar-btn" href="/login">Connexion</a>
+                    </li>
+                <% } else { %>
+                    <li>
+                        <a href="/admin" class="btn btn-inverse btn-bordered navbar-btn" style="border-color: #207EAA !important;">Interface d'administration</a>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</div>

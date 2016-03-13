@@ -1,0 +1,73 @@
+.btn.btn-primary {
+  border: none !important;
+  border-bottom: 4px outset #207EAA !important;
+  border-radius: 7px; }
+  .btn.btn-primary:hover {
+    border: none !important;
+    border-bottom: 4px outset #207EAA !important; }
+
+ul.nav.navbar-nav li {
+  text-align: center; }
+
+.pricing-column .plan-title {
+  font-size: 18pt; }
+
+#macbook-stream {
+  width: 600px;
+  margin: auto; }
+
+#iframe-stream {
+  width: 450px;
+  height: 290px;
+  position: absolute;
+  left: 50%;
+  margin-left: -225px;
+  margin-top: 30px; }
+
+.team img {
+  border: 5px solid; }
+
+.service-item {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px 5px;
+  border-radius: 5px; }
+
+#login {
+  padding-top: 150px; }
+  #login .form {
+    padding: 15px; }
+    #login .form input {
+      border: none;
+      border-radius: 0;
+      height: 40px;
+      background: #435966;
+      color: #ddd !important; }
+      #login .form input::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        color: #333 !important; }
+      #login .form input:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #333 !important; }
+      #login .form input::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #333 !important; }
+      #login .form input:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #333 !important; }
+      #login .form input.submit {
+        width: auto;
+        height: auto;
+        margin-top: 20px;
+        padding: 12px 30px;
+        border-radius: 10px 60px;
+        font-variant: small-caps; }
+
+.alert.alert-danger {
+  background: #E10143;
+  border: none;
+  color: #FFF;
+  font-size: 14pt;
+  max-width: 50%;
+  margin: auto; }
+
+/*# sourceMappingURL=main.css.map */
