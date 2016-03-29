@@ -54,7 +54,6 @@ router.post('/login', function (req, res) {
         , function(err, rows) {
             if (rows.length > 0) {
                 req.session.user = rows[0];
-                console.log("connect ok : session : ", req.session.user);
                 res.redirect("/admin/");
             } else {
                 res.render("login", { error: "Pseudo ou mot de passe incorrecte" });
@@ -63,8 +62,24 @@ router.post('/login', function (req, res) {
     connexion.end();
 });
 
-router.get('/register', function (req, res) {
-    res.render("register");
+router.get('/news/:id', function (req, res) {
+    if (!isNaN(req.params.id)) {
+        var connexion = mysql.createConnection(connexionParams);
+        connexion.connect();
+        connexion.query(
+            "SELECT * FROM dca_news WHERE uid = " + req.params.id
+            , req
+            , function (err, rows) {
+                if (rows.length > 0) {
+                    res.render("news", { user: req.session.user, news: rows[0] });
+                } else {
+                    res.render("login", {error: "Pseudo ou mot de passe incorrecte"});
+                }
+            });
+        connexion.end();
+    } else {
+        res.redirect('/');
+    }
 });
 
 module.exports = router;

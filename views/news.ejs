@@ -1,0 +1,24 @@
+<% include blocs/head.ejs %>
+
+<section class="section" id="news">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <br>
+                <br>
+                <a href="/" class="btn btn-primary" style="float: left;">Retourner à l'accueil</a>
+                <br style="clear: both">
+                <div class="title-box">
+                    <br>
+                    <h3 class="fadeIn animated wow text-white" data-wow-delay=".1s"><%= news.title %></h3>
+                    <br>
+                    <p style="color: #8490a4; font-weight: lighter; text-align: justify">
+                        <%= news.content %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include blocs/foot.ejs %>
