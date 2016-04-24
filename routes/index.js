@@ -56,9 +56,13 @@ router.post('/login', function (req, res) {
         "SELECT uid, username, level, email FROM dca_users WHERE username = '" + req.body.username + "' AND password = '" + req.body.password + "'"
         , req
         , function(err, rows) {
-            if (rows.length > 0) {
-                req.session.user = rows[0];
-                res.redirect("/admin/");
+            if (typeof rows != 'undefined') {
+                if (rows.length > 0) {
+                    req.session.user = rows[0];
+                    res.redirect("/admin/");
+                } else {
+                    res.render("login", { error: "Pseudo ou mot de passe incorrecte" });
+                }
             } else {
                 res.render("login", { error: "Pseudo ou mot de passe incorrecte" });
             }
