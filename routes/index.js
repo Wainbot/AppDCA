@@ -31,10 +31,12 @@ router.get('/', function (req, res) {
         "SELECT * FROM dca_news ORDER BY date DESC LIMIT 6"
         , req
         , function(err, rows) {
-            if (rows.length > 0) {
-                rows.forEach(function(value) {
-                    value.content = resizeString(value.content, 100);
-                });
+            if (typeof rows != 'undefined') {
+                if (rows.length > 0) {
+                    rows.forEach(function (value) {
+                        value.content = resizeString(value.content, 100);
+                    });
+                }
             }
             res.render("index", { user: req.session.user, news: rows });
         });
